@@ -1,0 +1,55 @@
+[
+  {
+    "_id": "spec",
+    "title": "Daiquiri",
+    "image": "https://iba-world.com/wp-content/uploads/2021/02/IBA-TU-10-Daiquiri.jpg",
+    "lines": [
+      {
+        "_id": "specLine",
+        "ingredient": {
+          "_id": "ingredient",
+          "name": "White Cuban Rum"
+        },
+        "note": "White Cuban Ron",
+        "amount": 60,
+        "unit": {
+          "_id": "ingredientUnit$ml",
+          "name": "milliliter",
+          "abbrevName": "ml",
+          "pluralName": "milliliters",
+          "isVolume": true
+        }
+      },
+      {
+        "_id": "specLine",
+        "ingredient": {
+          "_id": "ingredient",
+          "name": "lime juice"
+        },
+        "note": "fresh",
+        "amount": 20,
+        "unit": "ingredientUnit$ml"
+      },
+      {
+        "_id": "specLine",
+        "ingredient": {
+          "_id": "ingredient",
+          "name": "sugar"
+        },
+        "note": "superfine",
+        "amount": 2,
+        "unit": {
+          "_id": "ingredientUnit$brsp",
+          "name": "barspoon",
+          "abbrevName": "brsp",
+          "pluralName": "barspoons",
+          "isVolume": true
+        }
+      }
+    ],
+    "instructions": [
+      "In a cocktail shaker add all ingredients. Stir well to dissolve the sugar. Add ice and shake. Strain into chilled cocktail glass."
+    ],
+    "link": "https://iba-world.com/daiquiri/"
+  }
+]

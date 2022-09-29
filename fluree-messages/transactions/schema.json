@@ -1,0 +1,224 @@
+[
+  {
+    "_id": "_collection$Spec",
+    "name": "spec",
+    "doc": "Collection for Cocktail Recipes"
+  },
+  {
+    "_id": "_collection$SpecLine",
+    "name": "specLine",
+    "doc": "Collection for Line items (ingredients, amounts, and notes) in a Spec"
+  },
+  {
+    "_id": "_collection$Ingredient",
+    "name": "ingredient",
+    "doc": "Collection for Ingredients"
+  },
+  {
+    "_id": "_collection$ingredientUnit",
+    "name": "ingredientUnit",
+    "doc": "Collection for recognized Units"
+  },
+  {
+    "_id": "_collection$Dram",
+    "name": "dram",
+    "doc": "Collection for Drams"
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/title",
+    "doc": "The name of the drink",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/description",
+    "doc": "A blurb for the drink that might include inspiration, history, soundtrack, etc.",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/image",
+    "doc": "Link to asset that shows a canonical version of this drink",
+    "type": "uri"
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/lines",
+    "doc": "List of Ingredients for the Spec",
+    "type": "ref",
+    "restrictCollection": "specLine",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/instructions",
+    "doc": "List of instructions for the Spec",
+    "type": "string",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/link",
+    "doc": "URI of webpage featuring the Spec",
+    "type": "uri"
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/source",
+    "doc": "A reference to the originating source",
+    "type": "ref",
+    "restrictCollection": "CreativeWork"
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/creators",
+    "doc": "Anyone that contributed to the creation of the drink",
+    "type": "ref",
+    "restrictCollection": "Person",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/basicFlavors",
+    "doc": "A list of basic flavors associated with this spec e.g. - sour, sweet, acidic, savory, saline, etc.",
+    "type": "tag",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/abstractFlavors",
+    "doc": "A list of abstract flavors associated with this spec e.g. - bright, fresh, fruity, smooth, harsh, etc.",
+    "type": "tag",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "spec/aroma",
+    "doc": "A list of aromatic characteristics associated with this spec e.g. - floral, fruity, smokey, etc.",
+    "type": "tag",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "specLine/ingredient",
+    "doc": "Ingredient of this SpecLine",
+    "type": "ref",
+    "restrictCollection": "ingredient"
+  },
+  {
+    "_id": "_predicate",
+    "name": "specLine/note",
+    "doc": "Note attached to the Ingredient of this SpecLine e.g. - muddled, preferrably Stiggin's Fancy, etc.",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "specLine/amount",
+    "doc": "Number of units of the referenced Ingredient that are required to make this drink",
+    "type": "float"
+  },
+  {
+    "_id": "_predicate",
+    "name": "specLine/unit",
+    "doc": "The unit associated with this SpecLine's amount e.g. - oz, cup, barspoon, slice, wedge, etc.",
+    "type": "ref",
+    "restrictCollection": "ingredientUnit"
+  },
+  {
+    "_id": "_predicate",
+    "name": "specLine/isGarnish",
+    "doc": "Whether this SpecLine is meant to be built into the Garnish (true) or the Dram (false)",
+    "type": "boolean"
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredient/name",
+    "doc": "The name of this Ingredient",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredient/description",
+    "doc": "A description of this Ingredient",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredient/image",
+    "doc": "Link to asset that shows the ingredient in it's basic form",
+    "type": "uri"
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredient/basicFlavors",
+    "doc": "A list of basic flavors associated with this ingredient e.g. - sour, sweet, acidic, savory, saline, etc.",
+    "type": "tag",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredient/abstractFlavors",
+    "doc": "A list of abstract flavors associated with this ingredient e.g. - bright, fresh, fruity, smooth, harsh, etc.",
+    "type": "tag",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredient/aroma",
+    "doc": "A list of aromatic characteristics associated with this ingredient e.g. - floral, fruity, smokey, etc.",
+    "type": "tag",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredientUnit/name",
+    "doc": "The full name of this Unit e.g - Ounce, Tablespoon, Barspoon, Wedge, etc.",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredientUnit/abbrevName",
+    "doc": "The abbreviaton used for this unit in recipes e.g. - oz, tbsp, bspn, wedge, etc.",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredientUnit/pluralName",
+    "doc": "The pluralized name of this Unit e.g. - ounces, barspoons, wedges, dashes, etc.",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "ingredientUnit/isVolume",
+    "doc": "Indicates if this unit can be added to other volumetric ingredients of the same name",
+    "type": "boolean"
+  },
+  {
+    "_id": "_predicate",
+    "name": "dram/riff",
+    "doc": "The Spec used to make this drink",
+    "type": "ref",
+    "restrictCollection": "spec"
+  },
+  {
+    "_id": "_predicate",
+    "name": "dram/diff",
+    "doc": "Any changes in Ingredients and/or Amounts from the riffed Spec",
+    "type": "ref",
+    "restrictCollection": "specLine",
+    "multi": true
+  },
+  {
+    "_id": "_predicate",
+    "name": "dram/notes",
+    "doc": "Notes on this drink",
+    "type": "string"
+  },
+  {
+    "_id": "_predicate",
+    "name": "dram/image",
+    "doc": "Link to asset that shows the built drink",
+    "type": "uri"
+  }
+]
