@@ -1,0 +1,24 @@
+{
+  "select": [
+    "*",
+    {
+      "spec/lines": [
+        "*",
+        {
+          "specLine/ingredient": [
+            "name"
+          ]
+        },
+        {
+          "specLine/unit": [
+            "abbrevName"
+          ]
+        }
+      ]
+    }
+  ],
+  "from": "spec",
+  "opts": {
+    "compact": true
+  }
+}

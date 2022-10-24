@@ -1,0 +1,95 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://iba-world.com/#website",
+      "url": "https://iba-world.com/",
+      "name": "iba-world.com",
+      "description": "International Bartenders Association",
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://iba-world.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://iba-world.com/daiquiri/#primaryimage",
+      "inLanguage": "en-US",
+      "url": "https://iba-world.com/wp-content/uploads/2021/02/IBA-TU-10-Daiquiri.jpg",
+      "contentUrl": "https://iba-world.com/wp-content/uploads/2021/02/IBA-TU-10-Daiquiri.jpg",
+      "width": 1000,
+      "height": 1502
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://iba-world.com/daiquiri/#webpage",
+      "url": "https://iba-world.com/daiquiri/",
+      "name": "Daiquiri - iba-world.com",
+      "isPartOf": {
+        "@id": "https://iba-world.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://iba-world.com/daiquiri/#primaryimage"
+      },
+      "datePublished": "2021-04-29T13:59:02+00:00",
+      "dateModified": "2021-05-03T08:49:25+00:00",
+      "author": {
+        "@id": "https://iba-world.com/#/schema/person/ffad41ce880c1e5159ce53eb8b28e404"
+      },
+      "breadcrumb": {
+        "@id": "https://iba-world.com/daiquiri/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://iba-world.com/daiquiri/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://iba-world.com/daiquiri/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://iba-world.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Daiquiri"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://iba-world.com/#/schema/person/ffad41ce880c1e5159ce53eb8b28e404",
+      "name": "IBA Staff",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://iba-world.com/#personlogo",
+        "inLanguage": "en-US",
+        "url": "https://secure.gravatar.com/avatar/2b00a65e6eb164f8aabfe906d0096cde?s=96&d=mm&r=g",
+        "contentUrl": "https://secure.gravatar.com/avatar/2b00a65e6eb164f8aabfe906d0096cde?s=96&d=mm&r=g",
+        "caption": "IBA Staff"
+      },
+      "sameAs": [
+        "https://iba-world.com"
+      ],
+      "url": "https://iba-world.com/author/michele/"
+    }
+  ]
+}

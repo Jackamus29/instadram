@@ -28,7 +28,8 @@
     "_id": "_predicate",
     "name": "spec/title",
     "doc": "The name of the drink",
-    "type": "string"
+    "type": "string",
+    "unique": true
   },
   {
     "_id": "_predicate",
@@ -59,7 +60,7 @@
   },
   {
     "_id": "_predicate",
-    "name": "spec/link",
+    "name": "spec/webpage",
     "doc": "URI of webpage featuring the Spec",
     "type": "uri"
   },
@@ -135,7 +136,8 @@
     "_id": "_predicate",
     "name": "ingredient/name",
     "doc": "The name of this Ingredient",
-    "type": "string"
+    "type": "string",
+    "unique": true
   },
   {
     "_id": "_predicate",
@@ -174,7 +176,8 @@
     "_id": "_predicate",
     "name": "ingredientUnit/name",
     "doc": "The full name of this Unit e.g - Ounce, Tablespoon, Barspoon, Wedge, etc.",
-    "type": "string"
+    "type": "string",
+    "unique": true
   },
   {
     "_id": "_predicate",
