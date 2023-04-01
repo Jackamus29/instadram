@@ -1,12 +1,11 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { routes } from './routes';
 import './App.css';
-import MainPage from './pages/main';
+
+const router = createBrowserRouter(routes);
 
 function App() {
-  return (
-    <div className="App">
-      <MainPage />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
