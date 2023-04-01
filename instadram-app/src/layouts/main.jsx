@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, Link } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react';
 import {
   BeakerIcon,
@@ -9,7 +9,6 @@ import {
   // Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { routes } from '../routes';
 
 const navigation = [
   {
@@ -178,10 +177,10 @@ export default function MainLayout() {
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
-            <div className="flex h-16 shrink-0 items-center">
+            <Link to={'/'} className="flex h-16 shrink-0 items-center">
               <BoltIcon className="w-10 h-10 text-white" />
               <span className="text-lg text-white">InstaDram</span>
-            </div>
+            </Link>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
                 <li>
