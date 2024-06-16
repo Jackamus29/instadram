@@ -1,4 +1,0 @@
-SELECT ?cocktail ?cocktailLabel WHERE {
-  ?cocktail wdt:P31 wd:Q2536409
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-}
