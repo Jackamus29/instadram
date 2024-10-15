@@ -1,27 +1,38 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
-import { FlaskConical, Pipette, Map, Zap } from 'lucide-react';
-
-import { Bell, CircleUser, Menu, Search } from 'lucide-react';
+import {
+  Bell,
+  Menu,
+  Search,
+  FlaskConical,
+  Pipette,
+  Map,
+  Zap,
+  LucideProps,
+} from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-const navigation = [
+import { ProfileMenu } from '@/components/ProfileMenu';
+import { ForwardRefExoticComponent, RefAttributes } from 'react';
+
+type NavItem = {
+  name: string;
+  link: string;
+  badgeNum?: number;
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>
+  >;
+};
+
+const navigation: NavItem[] = [
   {
     name: 'Specs',
     link: '/specs',
-    badgeNum: 6,
+    // badgeNum: 6,
     icon: Map,
   },
   {
@@ -39,6 +50,7 @@ const navigation = [
 export default function MainLayout() {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      {/* Hidden if screensize below `md` */}
       <div className="hidden border-r bg-muted/40 md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
@@ -75,6 +87,7 @@ export default function MainLayout() {
       <div className="flex flex-col">
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
           <Sheet>
+            {/* Hidden if screensize at or above `md` */}
             <SheetTrigger asChild>
               <Button
                 variant="outline"
@@ -124,22 +137,7 @@ export default function MainLayout() {
               </div>
             </form>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <ProfileMenu />
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <Outlet />
